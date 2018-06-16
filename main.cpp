@@ -24,6 +24,7 @@ void App::on_connection_timeout() {
 }
 
 void App::onAtemConnected() {
+    mTimer->stop();
     //printf("\nslot on atemconnected\n\n");
 
     QAtemMixEffect *me = m_atemConnection->mixEffect(0);

@@ -46,3 +46,4 @@ auto_set - set auto effect
 ```
 
 # Program will timeout and print error message if there is no connection after 1 second!
+# Parameters are not validated! This is caller's responsibility.

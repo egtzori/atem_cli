@@ -3,14 +3,12 @@
 #include <App.h>
 
 App::App(int argc, char **argv): QCoreApplication(argc, argv) {
-
     this->argv = argv;
     this->argc = argc;
 
     m_atemConnection = new QAtemConnection(this);
     connect(m_atemConnection, SIGNAL(connected()), this, SLOT(onAtemConnected()));
     m_atemConnection->connectToSwitcher(QHostAddress(argv[1]));
-
 
     mTimer = new QTimer(this);
     mTimer->setSingleShot(true);
@@ -25,7 +23,6 @@ void App::on_connection_timeout() {
 
 void App::onAtemConnected() {
     mTimer->stop();
-    //printf("\nslot on atemconnected\n\n");
 
     QAtemMixEffect *me = m_atemConnection->mixEffect(0);
     if (!me) {
@@ -92,12 +89,10 @@ int main(int argc, char *argv[]) {
         if (4 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("preview", argv[2])) {
         if (4 != argc) return print_usage_and_die(argc, argv);
-        //int num = atoi(argv[3]);
     } else if (0 == strcmp("cut", argv[2])) {
         if (2 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("auto_set", argv[2])) {
         if (3 != argc) return print_usage_and_die(argc, argv);
-        //int num = atoi(argv[3]);
     } else if (0 == strcmp("auto", argv[2])) {
         if (3 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("read", argv[2])) {

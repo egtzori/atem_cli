@@ -69,29 +69,8 @@ void App::onAtemConnected() {
         QCoreApplication::quit();
         return;
     }
-    //get_info();
-
-    // switch args and do
-    QCoreApplication::quit();
 }
 
-void App::get_info() {
-    QMap<quint16, QAtem::InputInfo> info = m_atemConnection->inputInfos();
-
-    printf("we have %d inputs\n", info.count());
-    int i;
-
-    for (i=0; i<NUM_CHANNELS /*info.count()*/; i++) {
-        QAtem::InputInfo ii = info[i];
-        printf("i=%d, index: %d, \n", i, ii.index);
-    }
-
-    QAtemMixEffect *me = m_atemConnection->mixEffect(0);
-    me->cut();
-    //m_atemConnection->cut();
-}
-
-/// @returns index of selected transition style for current transition. Bit 0 = Mix, 1 = Dip, 2 = Wipe, 3 = DVE and 4 = Stinger, only bit 0-2 available on TVS
 int print_usage_and_die(int argc, char **argv) {
     printf("usage: %s <ip_address> read\n", argv[0]);
     printf("usage: %s <ip_address> program <1-8>\n", argv[0]);

@@ -18,9 +18,7 @@ class App: public QCoreApplication {
 
     public:
         App(int argc, char* argv[]);
-        void get_info();
         QAtemConnection *m_atemConnection;
-
 
     private:
         char **argv;
@@ -30,7 +28,6 @@ class App: public QCoreApplication {
     protected slots:
         void onAtemConnected();
         void on_connection_timeout();
-
 };
 
 

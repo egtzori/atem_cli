@@ -69,6 +69,7 @@ void App::onAtemConnected() {
 }
 
 int print_usage_and_die(int argc, char **argv) {
+    argc=argc;
     printf("usage: %s <ip_address> read\n", argv[0]);
     printf("usage: %s <ip_address> program <1-8>\n", argv[0]);
     printf("usage: %s <ip_address> preview <1-8>\n", argv[0]);

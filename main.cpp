@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
     } else if (0 == strcmp("cut", argv[2])) {
         if (3 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("auto_set", argv[2])) {
-        if (3 != argc) return print_usage_and_die(argc, argv);
+        if (4 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("auto", argv[2])) {
         if (3 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("read", argv[2])) {

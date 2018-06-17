@@ -78,7 +78,7 @@ int print_usage_and_die(int argc, char **argv) {
     printf("usage: %s <ip_address> auto_read\n", argv[0]);
     printf("usage: %s <ip_address> auto_set <0-4>\n", argv[0]);
     printf("auto_set effects: 0=Mix, 1=Dip, 2=Wipe, 3=Sting, 4=DVE\n");
-    return 0;
+    exit(0);
 }
 
 int main(int argc, char *argv[]) {

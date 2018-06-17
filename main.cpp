@@ -54,7 +54,7 @@ void App::onAtemConnected() {
         printf("set style %d\n", num1);
         m_atemConnection->mixEffect(0)->setTransitionType(num1);
         QCoreApplication::quit();
-    } else if (0 == strcmp("read_auto", this->argv[2])) {
+    } else if (0 == strcmp("auto_read", this->argv[2])) {
         printf("style %d frames %d\n", me->nextTransitionStyle(), me->transitionFrameCount());
         QCoreApplication::quit();
     } else if (0 == strcmp("read", this->argv[2])) {
@@ -75,7 +75,7 @@ int print_usage_and_die(int argc, char **argv) {
     printf("usage: %s <ip_address> preview <1-8>\n", argv[0]);
     printf("usage: %s <ip_address> cut\n", argv[0]);
     printf("usage: %s <ip_address> auto\n", argv[0]);
-    printf("usage: %s <ip_address> read_auto\n", argv[0]);
+    printf("usage: %s <ip_address> auto_read\n", argv[0]);
     printf("usage: %s <ip_address> auto_set <0-4>\n", argv[0]);
     printf("auto_set effects: 0=Mix, 1=Dip, 2=Wipe, 3=Sting, 4=DVE\n");
     return 0;
@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
         if (3 != argc) return print_usage_and_die(argc, argv);
     } else if (0 == strcmp("read", argv[2])) {
         if (3 != argc) return print_usage_and_die(argc, argv);
-    } else if (0 == strcmp("read_auto", argv[2])) {
+    } else if (0 == strcmp("auto_read", argv[2])) {
         if (3 != argc) return print_usage_and_die(argc, argv);
     } else {
         return print_usage_and_die(argc, argv);

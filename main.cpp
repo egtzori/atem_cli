@@ -35,37 +35,28 @@ void App::onAtemConnected() {
         int num = atoi(this->argv[3]);
         printf("change program %d\n", num);
         me->changeProgramInput(num);
-        QCoreApplication::quit();
     } else if (0 == strcmp("preview", this->argv[2])) {
         int num = atoi(this->argv[3]);
         printf("change preview %d\n", num);
         me->changePreviewInput(num);
-        QCoreApplication::quit();
     } else if (0 == strcmp("cut", this->argv[2])) {
         printf("cut\n");
         me->cut();
-        QCoreApplication::quit();
     } else if (0 == strcmp("auto", this->argv[2])) {
         printf("auto\n");
         me->autoTransition();
-        QCoreApplication::quit();
     } else if (0 == strcmp("auto_set", this->argv[2])) {
         int num1 = atoi(this->argv[3]);
         printf("set style %d\n", num1);
         m_atemConnection->mixEffect(0)->setTransitionType(num1);
-        QCoreApplication::quit();
     } else if (0 == strcmp("auto_read", this->argv[2])) {
         printf("style %d frames %d\n", me->nextTransitionStyle(), me->transitionFrameCount());
-        QCoreApplication::quit();
     } else if (0 == strcmp("read", this->argv[2])) {
         printf("program %d preview %d\n", me->programInput(), me->previewInput());
-        QCoreApplication::quit();
     } else {
-
-        printf("nothing to do..\n");
-        QCoreApplication::quit();
-        return;
+        printf("nothing to do..\n"); // unreachable?
     }
+    QCoreApplication::quit();
 }
 
 int print_usage_and_die(int argc, char **argv) {

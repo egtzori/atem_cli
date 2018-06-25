@@ -1,5 +1,5 @@
 # atem_cli
-simple console cli for atem
+simple console cli for BlackMagic ATEM switches
 
 !! https://github.com/petersimonsson/libqatemcontrol must be installed!
 

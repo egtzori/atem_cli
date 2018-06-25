@@ -47,3 +47,9 @@ auto_set - set auto effect
 
 # Program will timeout and print error message if there is no connection after 1 second!
 # Parameters are not validated! This is caller's responsibility.
+
+
+# Hey! Buy me a beer if this piece of code has saved you an hour or two. Donate $2.
+
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XR8S9JN8B6NVA)
